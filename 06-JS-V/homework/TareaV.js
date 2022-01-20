@@ -1,0 +1,2 @@
+* `prototype` (Los prototipos son un mecanismo en el cual los objetos en JavaScript heredan características entre sí.)
+* _Constructors_ (de Clases): (una clase contructora es un metodo especial para crear un objeto basado en una clase).
