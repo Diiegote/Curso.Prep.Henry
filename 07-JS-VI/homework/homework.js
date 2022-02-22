@@ -11,6 +11,7 @@ function invocarCallback(cb) {
   // Invoca al callback `cb`
   //Tu código:
   cb() ;
+ 
 }
 
 function operacionMatematica(n1, n2, cb) {
@@ -18,6 +19,7 @@ function operacionMatematica(n1, n2, cb) {
   //Devolver el callback pasándole como argumentos los números recibidos.
   //Tu código:
   return cb(n1,n2) ;
+ 
 }
 
 function sumarArray(numeros, cb) {
@@ -25,19 +27,18 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  var sumaTotal = numeros.reduce(function(acc, curr) {
-    return acc + curr;
-  },0);
-  cb(sumaTotal);
+  var suma = numeros.reduce(function(cont,ele){
+    return cont + ele 
+  }, 0); 
+  cb(suma) ;
+ 
 }
 
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
-  for(var i = 0 ; i < array.length ; i ++) {
-    cb(array[i]) ;
-  }
+  array.forEach(cb) ;
 }
 
 function map(array, cb) {
@@ -45,23 +46,24 @@ function map(array, cb) {
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
-  var nuevoArray = array.map(function(e1){
-    return cb(e1) ;
+  var nuevoArray = array.map(function(n){
+    return cb(n) ;
   }) ;
-  return nuevoArray ;
+  return nuevoArray;
+
 }
 
 function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
-  var nuevoArray = [];
-  for(let i = 0; i<array.length; i++) {
+  var nuevoArray = [] ;
+  for(var i = 0 ; i < array.length ; i++){
     if(array[i][0] === "a") {
       nuevoArray.push(array[i])
     }
   }
-  return nuevoArray;
+  return nuevoArray ;
 }
 
 // No modificar nada debajo de esta línea
